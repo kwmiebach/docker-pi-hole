@@ -14,6 +14,7 @@
 version: "3"
 
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+
 services:
   pihole:
     container_name: pihole
@@ -24,7 +25,7 @@ services:
       - "67:67/udp"
       - "80:80/tcp"
     environment:
-      TZ: 'America/Chicago'
+      TZ: 'Europe/Berlin'
       # WEBPASSWORD: 'set a secure password here or it will be random'
     # Volumes store your data between container upgrades
     volumes:
@@ -36,6 +37,7 @@ services:
       - NET_ADMIN
     restart: unless-stopped
 ```
+
 2. Run `docker-compose up -d` to build and start pi-hole
 3. Use the Pi-hole web UI to change the DNS settings *Interface listening behavior* to "Listen on all interfaces, permit all origins", if using Docker's default `bridge` network setting
 
